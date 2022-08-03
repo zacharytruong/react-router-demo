@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useHistory } from 'react-router-dom';
 import './App.css';
 
 function App() {
+  const history = useHistory();
+  const richDadTitle = 'Rich-Dad-Poor-Dad';
+  const theRichest = 'The Richest Man in Babylon'
+  const handleClick = (name) => history.push(`/about/${name}`);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome Coder!</h1>
+      <button onClick={() => handleClick(richDadTitle)}>
+        {richDadTitle}
+      </button>
+      <button onClick={() => handleClick(theRichest)}>
+        {theRichest}
+      </button>
     </div>
   );
 }
